@@ -1,0 +1,26 @@
+{
+  "name": "GameFramework",
+  "version": "1.0.0",
+  "description": "一个基于CocosCreator编辑器的客户端游戏框架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaocongcc/GameFramework.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiaocongcc/GameFramework/issues"
+  },
+  "homepage": "https://github.com/xiaocongcc/GameFramework#readme",
+  "dependencies": {
+    "@types/node": "^12.0.8"
+  },
+  "devDependencies": {
+    "protobufjs": "^5.0.3"
+  }
+}

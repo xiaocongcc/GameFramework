@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "base.proto";
+
+//@comment("登录",10000,"C2G_Login")
+message C2G_Login {
+    string cmd = 1;  
+    //登录名  
+    string name = 2;
+    // 密码
+    string pw = 3;
+}
+
+//@comment("登录返回",10001,"G2C_Login")
+message G2C_Login {
+    string msg = 1;
+}

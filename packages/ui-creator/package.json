@@ -1,0 +1,25 @@
+{
+    "name": "ui-creator",
+    "version": "0.0.1",
+    "description": "The package template for getting started.",
+    "author": "Cocos Creator",
+    "main": "main.js",
+    "main-menu": {
+        "i18n:MAIN_MENU.package.title/ui-creator/create-node-tree": {
+            "message": "ui-creator:create-node-tree"
+        },
+        "i18n:MAIN_MENU.package.title/ui-creator/create-ui-template": {
+            "message": "ui-creator:create-ui-template"
+        },
+        "i18n:MAIN_MENU.package.title/ui-creator/path-config": {
+            "message": "ui-creator:config"
+        }
+    },
+    "panel": {
+        "main": "panel/index.js",
+        "type": "dockable",
+        "title": "path-config",
+        "width": 800,
+        "height": 200
+    }
+}

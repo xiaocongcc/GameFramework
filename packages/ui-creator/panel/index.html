@@ -1,0 +1,22 @@
+<div class="layout vertical fit">
+    <ui-prop name="UI节点树脚本输出路径:" tooltip="">
+        <div class="flex-1 layout horizontal center">
+            <ui-input placeholder="" disabled class="flex-1" v-value="nodeOutputPath">
+            </ui-input>
+            <ui-button class="blue" v-on:confirm="onBtnSelectNodePath">选择目录</ui-button>
+            <ui-button v-show="this.nodeOutputPath!==null && this.nodeOutputPath.length>0"
+                v-on:confirm="onBtnOpenNodePath">打开目录
+            </ui-button>
+        </div>
+    </ui-prop>
+    <ui-prop name="UI逻辑脚本输出路径:" tooltip="">
+        <div class="flex-1 layout horizontal center">
+            <ui-input placeholder="" disabled class="flex-1" v-value="uiOutputPath">
+            </ui-input>
+            <ui-button class="blue" v-on:confirm="onBtnSelectUIPath">选择目录</ui-button>
+            <ui-button v-show="this.uiOutputPath!==null && this.uiOutputPath.length>0" v-on:confirm="onBtnOpenUIPath">
+                打开目录
+            </ui-button>
+        </div>
+    </ui-prop>
+</div>

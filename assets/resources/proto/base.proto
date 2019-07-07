@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+//@msgtype("一维整数数组","NUMBER_ARRAYS")
+message NUMBER_ARRAYS{
+	repeated int32 numbers = 1;
+}

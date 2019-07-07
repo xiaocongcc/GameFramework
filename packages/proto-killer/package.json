@@ -1,0 +1,20 @@
+{
+  "name": "proto-killer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "main-menu": {
+    "i18n:MAIN_MENU.package.title/proto-killer": {
+      "message": "proto-killer:open"
+    }
+  },
+  "panel": {
+    "main": "panel/index.js",
+    "type": "dockable",
+    "title": "proto-killer",
+    "width": 500,
+    "height": 500,
+    "min-width": 500,
+    "min-height": 200
+  }
+}

@@ -1,0 +1,34 @@
+import _AUTOUI from "../../../Data/AutoUI/_MODULE/_AUTOUI";
+import UIBase from "../UIBase";
+import UIHelp from "../UIHelp";
+
+const { ccclass, menu, property } = cc._decorator;
+
+@ccclass
+@menu("UI/_MODULE/_UINAME")
+export default class _UINAME extends UIBase {
+	ui: _AUTOUI = null;
+
+	protected static prefabUrl = "_PREFABPATH";
+	protected static className = "_UINAME";
+
+	onUILoad() {
+		this.ui = this.node.addComponent(_AUTOUI);
+	}
+
+	onShow() {
+
+	}
+
+	onHide() {
+
+	}
+
+	onStart() {
+
+	}
+
+	onClose() {
+		UIHelp.CloseUI(_UINAME);
+	}
+}

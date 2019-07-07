@@ -1,0 +1,68 @@
+<div class="layout vertical fit">
+    <div class="layout vertical flex-1">
+
+        <div id="view-root" class="scroll">
+            <div class="section">
+                <ui-section>
+                    <div class="header greenColor">
+                        <div class="greenColor">
+                            Proto
+                        </div>
+                    </div>
+
+                    <ui-prop name="Proto文件路径:" tooltip="插件会循环遍历出目录下所有的proto文件">
+                        <div class="flex-1 layout horizontal center">
+                            <ui-input placeholder="请选择Proto目录" disabled class="flex-1" v-value="protoRootPath">
+                            </ui-input>
+                            <ui-button class="blue" v-on:confirm="onBtnClickSelectProtoRootPath">选择目录</ui-button>
+                            <ui-button v-show="this.protoRootPath!==null && this.protoRootPath.length>0"
+                                v-on:confirm="onBtnClickOpenProtoRootPath">打开目录
+                            </ui-button>
+                            <ui-button v-show="this.protoRootPath!==null && this.protoRootPath.length>0"
+                                v-on:confirm="onBtnClickFreshProto">
+                                <i class="icon-arrows-cw"></i>
+                            </ui-button>
+                        </div>
+                    </ui-prop>
+                    <ui-prop name="Proto输出路径:" tooltip="最终输出路径">
+                        <div class="flex-1 layout horizontal center">
+                            <ui-input placeholder="基于项目的相对路径" class="flex-1" v-value="outputPath">
+                            </ui-input>
+                        </div>
+                    </ui-prop>
+
+                    <div class="wrapper center layout horizontal excelBoard">
+                        <div class="box flex-1">
+                            <ui-checkbox v-on:change="onBtnClickSelectProto" checked>序号</ui-checkbox>
+                        </div>
+                        <div class="box flex-3"> Proto文件</div>
+                        <!-- <div class="box flex-3"> 工作表名称</div> -->
+                    </div>
+                    <div class="" style="height: 200px;margin-left: 0px; margin-right: 0px;">
+                        <div id="view" class="scroll" style="padding-right: 0px;padding-bottom: 0px;height: 200px;">
+                            <div class="section" id="section" style="margin-bottom: 0px; padding-bottom: 0px;">
+                                <ui-box-container class="shadow height-limited" style="height: auto; min-height: 200px;"
+                                    id="container">
+                                    <proto-item track-by="$index" v-for="(index,item) in protoDataArr" :data="item"
+                                        :index="index">
+                                    </proto-item>
+                                </ui-box-container>
+                            </div>
+                        </div>
+                    </div>
+                </ui-section>
+            </div>
+        </div>
+
+
+        <hr style="margin: 1px 0 1px 0">
+        <div class="layout horizontal center justified ">
+            <h2 class="start-justified" style="margin: 1px 0 1px 0;color: #2feb21;"> 输出日志 </h2>
+            <ui-button v-on:confirm="onBtnClickGen" class="end-justified red">生成</ui-button>
+        </div>
+    </div>
+    <div>
+        <textarea class="flex-1 log" id="logTextArea" v-model="logView">
+        </textarea>
+    </div>
+</div>
