@@ -10,9 +10,14 @@ const dontSelectCorrectAssetMsg = {
     noLink: true
 };
 
+const nodeTree = require('./core/node-tree');
+const uiTemplate = require('./core/ui-template');
+
 module.exports = {
     load() {
         // execute when package loaded
+        nodeTree.init();
+        uiTemplate.init();
     },
 
     unload() {
@@ -26,9 +31,6 @@ module.exports = {
             Editor.Panel.open('ui-creator');
         },
         'create-node-tree'() {
-            const nodeTree = require('./core/node-tree');
-            nodeTree.init();
-
             let currentSelection = Editor.Selection.curSelection('asset');
             if (currentSelection.length <= 0) {
                 Editor.Dialog.messageBox(dontSelectCorrectAssetMsg);
@@ -47,9 +49,6 @@ module.exports = {
             }
         },
         'create-ui-template'() {
-            const uiTemplate = require('./core/ui-template');
-            uiTemplate.init();
-
             let currentSelection = Editor.Selection.curSelection('asset');
             if (currentSelection.length <= 0) {
                 Editor.Dialog.messageBox(dontSelectCorrectAssetMsg);
@@ -62,6 +61,7 @@ module.exports = {
             if (assetType === 'folder') {
                 uiTemplate.dealFolder(assetInfo);
             } else if (assetType === 'prefab' || assetType === 'scene') {
+                nodeTree.dealPrefab(assetInfo);
                 uiTemplate.dealPrefab(assetInfo);
             } else {
                 Editor.Dialog.messageBox(dontSelectCorrectAssetMsg);
