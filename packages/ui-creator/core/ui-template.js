@@ -11,6 +11,7 @@ const adb = Editor.assetdb;
 var outputRelativePath;
 var outputFullPath;
 var scriptTemplate;
+var templatePath;
 
 // 首字母大写
 var firstCharUpper = function (str) {
@@ -40,8 +41,7 @@ module.exports = {
             outputRelativePath = data.uiOutputPath;
             outputFullPath = path.join(projectPath, outputRelativePath);
         });
-        let templatePath = Editor.url('packages://ui-creator/core/ui-template.txt');
-        scriptTemplate = fs.readFileSync(templatePath, 'utf8') + "";
+        templatePath = Editor.url('packages://ui-creator/core/ui-template.txt');
     },
 
     dealFolder(assetInfo) {
@@ -81,6 +81,7 @@ module.exports = {
 
         let autoUIName = getAutoUIName(url);
 
+        let scriptTemplate = fs.readFileSync(templatePath, 'utf8') + "";
         scriptTemplate = scriptTemplate.replace(/_AUTOUI/g, autoUIName);
         scriptTemplate = scriptTemplate.replace(/_MODULE/g, moduleName);
         scriptTemplate = scriptTemplate.replace(/_PREFABPATH/g, prefabPath);
