@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "protobufjs": "^6.8.8",
-    "ws": "^1.1.1"
+    "ws": "^3.3.1"
   }
 }
